@@ -1,3 +1,4 @@
+import { LocalizationService } from './../../../services/localization/localization.service';
 import { Component, OnInit } from '@angular/core';
 import { ReservationService } from 'src/app/services/reservation/reservation.service';
 
@@ -9,7 +10,7 @@ import { ReservationService } from 'src/app/services/reservation/reservation.ser
 export class ReservationListComponent implements OnInit {
 
   ListOfReservations;
-  constructor(private reservationService:ReservationService) { }
+  constructor(private reservationService:ReservationService,public localization:LocalizationService) { }
 
   ngOnInit() {
     this.GetAll();

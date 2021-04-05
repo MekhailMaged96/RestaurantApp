@@ -1,32 +1,36 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" [ngClass]="{'RTL':localization.IsArabic()}">
   <div class="container">
-    <a class="navbar-brand" routerLink="/home">Reseturant App</a>
     <button class="navbar-toggler"  (click)="toggleNavbar()"  type="button" data-toggle="collapse" 
     data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
      aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02" ngClass="{ 'show': navbarOpen }">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <ul class="navbar-nav  mt-2 mt-lg-0" [ngClass]="localization.IsArabic()? 'ml-auto' : ' mr-auto'">
         <li class="nav-item active" routerLinkActive="active">
-          <a class="nav-link" routerLink='/home'>Home</a>
+          <a class="nav-link" routerLink='/home'>{{ 'Home' | translate }}</a>
         </li>
         <li class="nav-item active" routerLinkActive="active" *ngIf="_auth.LoggedIn()">
-          <a class="nav-link" routerLink='/reservation/list'>Reservations</a>
+          <a class="nav-link" routerLink='/reservation/list'>{{ 'Reservation.title' | translate }}</a>
         </li>
       </ul> 
-      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-
+      <ul class="navbar-nav  mt-2 mt-lg-0" [ngClass]="localization.IsArabic()? 'mr-auto' : 'ml-auto'">
+        <li class="nav-item">
+          <select class="mt-2" (change)="onLangChange($event.target.value)" [ngModel]="selectedLang"> 
+            <option value="en">en</option>
+            <option value="ar">Ar</option>
+          </select>
+        </li>
       <ng-container *ngIf="!_auth.LoggedIn()">
         <li class="nav-item active" routerLinkActive="active">
-          <a class="nav-link" routerLink='/login'>Login</a>
+          <a class="nav-link" routerLink='/login'>{{ 'Login' | translate }}</a>
         </li>
         <li class="nav-item active" routerLinkActive="active">
-          <a class="nav-link" routerLink='/register'>Register</a>
+          <a class="nav-link" routerLink='/register'>{{ 'Register' | translate }}</a>
         </li>
       </ng-container>
         <li class="nav-item active" routerLinkActive="active" *ngIf="_auth.LoggedIn()">
-            <a class="nav-link cursor-p" (click)="logout()">LogOut</a>
+            <a class="nav-link cursor-p" (click)="logout()">{{ 'Logout' | translate }}</a>
        
        
         </li>

@@ -1,51 +1,68 @@
 <div class="row justify-content-center mt-3" >
 
   <div class="col-12 col-md-5">
-    <h2 class="text-center text-danger">Add Reservation</h2>
+    <h2 class="text-center text-danger">{{'Reservation.add' | translate}}</h2>
     <hr>
     <form [formGroup]="addForm" class="my-2 my-lg-0" (ngSubmit)="AddReservation()" >
       <div class="form-group">
 
         <input class="form-control" 
-        [ngClass]="{'is-invalid':addFormControl.tableNumber.touched && addFormControl.tableNumber.errors }"
-        type="text" placeholder="tableNumber" formControlName="tableNumber">
-        <div class="invalid-feedback"
+        [ngClass]="{'is-invalid':(addFormControl.tableNumber.touched && addFormControl.tableNumber.errors) 
+        ,'text-right':localization.IsArabic()}"
+        type="text"
+        placeholder=" {{'Reservation.tableNum' | translate}}"
+         formControlName="tableNumber">
+        <div class="invalid-feedback" [ngClass]="{'text-right':localization.IsArabic()}"
         *ngIf="(addFormControl.tableNumber.touched) && 
         addFormControl.tableNumber.hasError('required')">
-        Table Number is required
+        {{'Reservation.tableRequired' | translate}}
         </div>
       </div>
       <div class="form-group">
-        <input [ngClass]="{'is-invalid': addFormControl.numOfPeople.errors && addFormControl.numOfPeople.touched}" class="form-control"
-          placeholder="Nnumber Of People" formControlName="numOfPeople">
+        <input [ngClass]="{'is-invalid': (addFormControl.numOfPeople.errors && addFormControl.numOfPeople.touched)
+        ,'text-right':localization.IsArabic()}"
+        class="form-control"
+        placeholder=" {{'Reservation.numsOfPeople' | translate}}"
+        formControlName="numOfPeople">
         <div class="invalid-feedback"
+        [ngClass]="{'text-right':localization.IsArabic()}"
          *ngIf="addFormControl.numOfPeople.errors 
+         
         && addFormControl.numOfPeople.hasError('required')">
-        Number Of People is required
+        {{'Reservation.numOfPeopleRequired' | translate}}
       </div>
       </div>
       <div class="form-group">
         <select  class="form-control" 
-        [ngClass]="{'is-invalid': addFormControl.foodTypeId.errors && addFormControl.foodTypeId.touched}"
-        formControlName="foodTypeId" placeholder="Food Type">
+        [ngClass]="{'is-invalid': (addFormControl.foodTypeId.errors && addFormControl.foodTypeId.touched)
+        ,'text-right':localization.IsArabic()}"
+        formControlName="foodTypeId" 
+        >
           <option value="" selected >Select Your Food Type</option>
           <option *ngFor="let food of foodTypes" value="{{food.id}}">{{food.name}}</option>
         </select>
         <div class="invalid-feedback"
+        [ngClass]="{'text-right':localization.IsArabic()}"
         *ngIf="addFormControl.foodTypeId.errors 
        && addFormControl.foodTypeId.hasError('required')">
-       Food Type is required
+       {{'Reservation.foodTypeRequied' | translate}}
      </div>
       </div>
       <div class="form-group">
-        <input  class="form-control"
-          placeholder="Notes" formControlName="notes">
+        <input class="form-control" [ngClass]="{'text-right':localization.IsArabic()}"
+          placeholder="{{'Reservation.notes' | translate}}" formControlName="notes">
       </div>
     
      
-     
-      <button class="btn btn-success my-2 my-sm-0 mr-2" type="submit" [disabled]="!addForm.valid" >Add</button>
-      <button class="btn btn-primary my-2 my-sm-0" type="button" (click)="onCancel()" >Cancel</button>
+     <div  [ngClass]="{'text-right':localization.IsArabic()}">
+      <button class="btn btn-success my-2 my-sm-0 mr-2" type="submit" [disabled]="!addForm.valid" >
+        {{'Reservation.addbtn' | translate}}
+      </button>
+      <button class="btn btn-primary my-2 my-sm-0" type="button" (click)="onCancel()" >
+        {{'Reservation.cancel' | translate}}
+      </button>
+     </div>
+   
 
     </form>
  

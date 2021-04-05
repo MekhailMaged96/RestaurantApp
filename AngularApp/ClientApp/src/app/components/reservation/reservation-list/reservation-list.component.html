@@ -2,19 +2,21 @@
   <div class="row">
     <div class="col-md-12 mt-5">
       <div class="card">
-        <div class="card-header">
-           <span>Reservations List</span>
-           <button  routerLink='/reservation/add' class="btn btn-success btn-add">Add Reservation</button>
+        <div class="card-header" [ngClass]="{'text-right':localization.IsArabic()}">
+           <span > {{'Reservation.list' | translate}}</span>
+           <button  routerLink='/reservation/add' class="btn btn-success btn-add"
+           [ngClass]="{'float-left':localization.IsArabic()}"
+           >{{'Reservation.add' | translate}}</button>
         </div>
         <div class="card-body">
-          <table class="table">
+          <table class="table" [ngClass]="{'RTL':localization.IsArabic()}">
             <thead class="thead-light">
               <tr>
-                <th scope="col">Table Number</th>
-                <th scope="col">Number of People</th>
-                <th scope="col">Food Type</th>
-                <th scope="col">Notes</th>
-                <th scope="col">Reservation Date</th>
+                <th scope="col">{{'Reservation.tableNum' | translate}}</th>
+                <th scope="col">{{'Reservation.numsOfPeople' | translate}}</th>
+                <th scope="col">{{'Reservation.foodType' | translate}}</th>
+                <th scope="col">{{'Reservation.notes' | translate}}</th>
+                <th scope="col">{{'Reservation.reservationDate' | translate}}</th>
               </tr>
             </thead>
             <tbody>
@@ -23,7 +25,7 @@
                <td> {{res.numOfPeople}}</td>
                <td> {{res.foodType?.name}}</td>
                <td> {{res.notes}}</td>
-               <td>{{ res.creationDate | date:'yyyy/MM/dd hh:mm:aa'}}</td>
+               <td>{{ res.creationDate | date:'yyyy/MM/dd'}}</td>
               </tr>
             </tbody>
           </table>

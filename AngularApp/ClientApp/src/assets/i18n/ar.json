@@ -1,0 +1,24 @@
+{
+    "welcome":"اهلا بك الى موقع مطاعم",
+    "Login":"تسجيل الدخول",
+    "Register":"انشاء حساب",
+    "userName":"اسم المستخدم",
+    "password":"كلمة السر",
+    "Logout":"خروج",
+    "Home":"الرئيسية",
+    "Reservation":{
+        "title":"الحجوزات",
+        "add":"اضافة حجز",
+        "list":"قائمة الحجوزات",
+        "tableNum":"رقم الطاولة",
+        "numsOfPeople":"عدد الاشخاص",
+        "foodType":"نوع الطعام",
+        "notes":"ملاحظات",
+        "reservationDate":"موعد الحجز",
+        "tableRequired":"رقم الطاولة مطلوب",
+        "numOfPeopleRequired":"عدد الاشخاص مطلوب",
+        "foodTypeRequied":"نوع الطعام مطلوب",
+        "addbtn":"اضافة",
+        "cancel":"رجوع"
+    }
+}

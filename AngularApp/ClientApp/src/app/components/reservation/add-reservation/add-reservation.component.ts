@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { ReservationService } from './../../../services/reservation/reservation.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { LocalizationService } from 'src/app/services/localization/localization.service';
 
 @Component({
   selector: 'app-add-reservation',
@@ -11,7 +12,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AddReservationComponent implements OnInit {
   addForm:FormGroup;
   foodTypes;
-  constructor(private fb:FormBuilder,private reservationService:ReservationService,private router:Router) { }
+  constructor(private fb:FormBuilder,private reservationService:ReservationService,
+    public localization:LocalizationService,
+    private router:Router) { }
 
   ngOnInit() {
     this.CreateForm();

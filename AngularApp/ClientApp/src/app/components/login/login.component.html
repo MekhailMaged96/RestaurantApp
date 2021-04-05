@@ -2,27 +2,27 @@
   <div class="row justify-content-center">
       <div class="col-md-7">
           <div class="card">
-              <div class="card-header">Login</div>
-              <div class="card-body">
+              <div class="card-header"  [ngClass]="{'text-right':localization.IsArabic()}">{{"Login" | translate}}</div>
+              <div class="card-body"  [ngClass]="{'RTL':localization.IsArabic()}">
                   <form [formGroup]="loginForm"  (ngSubmit)="onSubmit(loginForm)">
                       <div class="form-group row">
-                          <label for="email" class="col-sm-4 col-form-label text-md-right">User Name</label>
+                          <label for="email" class="col-sm-4 col-form-label text-md-right">{{"userName" | translate}}</label>
                           <div class="col-md-6">
                               <input id="email" type="text" class="form-control" formControlName="username">
                           </div>
                       </div>
                       <div class="form-group row">
-                          <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                          <label for="password" class="col-md-4 col-form-label text-md-right">{{"password" | translate}}</label>
                           <div class="col-md-6">
                               <input id="password" type="password" class="form-control"
                               formControlName="password"
                                name="password" required>           
                           </div>
                       </div>
-                      <div class="form-group row mb-0">
-                        <div class="col-md-8 offset-md-4">
+                      <div class="form-group offset-md-2 mb-0"  [ngClass]="{'text-right':!localization.IsArabic()}" >
+                        <div class="p-1" >
                             <button type="submit" class="btn btn-primary">
-                                Login
+                                {{"Login" | translate}}
                             </button>
                           </div> 
                         </div>     

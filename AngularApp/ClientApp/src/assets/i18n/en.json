@@ -1,0 +1,24 @@
+{
+    "welcome":"Welcome To Resturant App",
+    "Login":"Login",
+    "userName":"User Name",
+    "password":"Password",
+    "Register":"Register",
+    "Logout":"Logout",
+    "Home":"Home",
+    "Reservation":{
+        "title":"Reservations",
+        "add":"Add Reservation",
+        "list":"Reservations List",
+        "tableNum":"Table Number",
+        "numsOfPeople":"Number of People",
+        "foodType":"Food Type",
+        "notes":"Notes",
+        "reservationDate":"Reservation Date",
+        "tableRequired":"Table Number is required",
+        "numOfPeopleRequired":"Number Of People is required",
+        "foodTypeRequied":"Food Type is required",
+        "addbtn":"Add",
+        "cancel":"Cancel"
+    }
+}

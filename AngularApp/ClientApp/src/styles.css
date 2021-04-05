@@ -1,2 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+
+.RTL{
+    direction: rtl;
+}
+.float-right{
+    float: right !important;
+}
+
+.float-left{
+    float: left !important;
+}
+.text-right{
+    text-align: right !important;
+}
