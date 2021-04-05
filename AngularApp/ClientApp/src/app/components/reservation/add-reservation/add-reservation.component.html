@@ -35,11 +35,11 @@
       <div class="form-group">
         <select  class="form-control" 
         [ngClass]="{'is-invalid': (addFormControl.foodTypeId.errors && addFormControl.foodTypeId.touched)
-        ,'text-right':localization.IsArabic()}"
+        ,'RTL':localization.IsArabic()}"
         formControlName="foodTypeId" 
         >
-          <option value="" selected >Select Your Food Type</option>
-          <option *ngFor="let food of foodTypes" value="{{food.id}}">{{food.name}}</option>
+          <option value="" selected >{{"Reservation.foodTypeSelect" | translate}}</option>
+          <option *ngFor="let food of foodTypes" value="{{food.id}}">{{ localization.IsArabic()?food.nameAr :food.name}}</option>
         </select>
         <div class="invalid-feedback"
         [ngClass]="{'text-right':localization.IsArabic()}"

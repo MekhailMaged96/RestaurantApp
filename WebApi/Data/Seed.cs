@@ -29,9 +29,9 @@ namespace WebApi.Data
         {
             var foodList = new List<FoodType>()
             {
-                new FoodType {Name = "Fish"},
-                new FoodType { Name = "Pizza" },
-                new FoodType { Name = "Chicken" },
+                new FoodType {Name = "Fish",NameAr="اسماك"},
+                new FoodType { Name = "Pizza",NameAr="بيتزا" },
+                new FoodType { Name = "Chicken" ,NameAr="فراخ"},
             };
 
             return foodList;

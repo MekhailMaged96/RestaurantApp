@@ -9,11 +9,13 @@
     "Reservation":{
         "title":"Reservations",
         "add":"Add Reservation",
+    
         "list":"Reservations List",
         "tableNum":"Table Number",
         "numsOfPeople":"Number of People",
         "foodType":"Food Type",
         "notes":"Notes",
+        "foodTypeSelect":"Select Your Food Type",
         "reservationDate":"Reservation Date",
         "tableRequired":"Table Number is required",
         "numOfPeopleRequired":"Number Of People is required",

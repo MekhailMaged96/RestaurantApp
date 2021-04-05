@@ -14,6 +14,7 @@
         "numsOfPeople":"عدد الاشخاص",
         "foodType":"نوع الطعام",
         "notes":"ملاحظات",
+        "foodTypeSelect":"اختار نوع الطعام",
         "reservationDate":"موعد الحجز",
         "tableRequired":"رقم الطاولة مطلوب",
         "numOfPeopleRequired":"عدد الاشخاص مطلوب",

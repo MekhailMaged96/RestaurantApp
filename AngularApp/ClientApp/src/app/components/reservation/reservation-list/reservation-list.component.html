@@ -23,7 +23,7 @@
               <tr *ngFor="let res of ListOfReservations">
                <td> {{res.tableNumber}}</td>
                <td> {{res.numOfPeople}}</td>
-               <td> {{res.foodType?.name}}</td>
+               <td> {{ localization.IsArabic()? res.foodType?.nameAr : res.foodType?.name }}</td>
                <td> {{res.notes}}</td>
                <td>{{ res.creationDate | date:'yyyy/MM/dd'}}</td>
               </tr>
