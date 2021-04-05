@@ -49,6 +49,6 @@ export class AddReservationComponent implements OnInit {
     })
   }
   onCancel(){
-
+    this.router.navigate(['reservation/list']);
   }
 }
