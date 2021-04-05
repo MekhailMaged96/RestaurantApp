@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mt-5">
+      <div class="card">
+        <div class="card-header">
+           <span>Reservations List</span>
+           <button  routerLink='/reservation/add' class="btn btn-success btn-add">Add Reservation</button>
+        </div>
+        <div class="card-body">
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Table Number</th>
+                <th scope="col">Number of People</th>
+                <th scope="col">Food Type</th>
+                <th scope="col">Notes</th>
+                <th scope="col">Reservation Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let res of ListOfReservations">
+               <td> {{res.tableNumber}}</td>
+               <td> {{res.numOfPeople}}</td>
+               <td> {{res.foodType?.name}}</td>
+               <td> {{res.notes}}</td>
+               <td>{{ res.creationDate | date:'yyyy/MM/dd'}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

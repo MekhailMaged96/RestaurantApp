@@ -1,4 +1,5 @@
 ﻿
+using Domain.Aggregates.FoodTypeAgg;
 using Domain.Aggregates.ReservationAgg;
 using Domain.Aggregates.UserAgg;
 using Domain.Interfaces;
@@ -41,6 +42,16 @@ namespace Infrastructure.Data.UnitOfWork
             }
         }
 
+
+        private IRepository<FoodType> _FoodTypeRepo;
+
+        public IRepository<FoodType> FoodTypeRepo
+        {
+            get
+            {
+                return this._FoodTypeRepo = this._FoodTypeRepo ?? new Repository<FoodType>(_context);
+            }
+        }
         public async Task<bool> SaveAsync()
         {
             using (var dbContextTransaction = _context.Database.BeginTransaction())

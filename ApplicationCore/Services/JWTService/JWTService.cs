@@ -20,11 +20,12 @@ namespace ApplicationCore.Services.JWTService
         }
         public string GenerateJWTToken(User user)
         {
-            var claims = new List<Claim>();
-            {
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString());
-                new Claim(ClaimTypes.Name, user.UserName);
+            var claims = new[]
+           {
+               new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),
+               new Claim(ClaimTypes.Name,user.UserName)
             };
+
             var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha512Signature);
 
             var tokenDescriptor = new SecurityTokenDescriptor()

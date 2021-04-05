@@ -1,4 +1,5 @@
 ﻿
+using Domain.Aggregates.FoodTypeAgg;
 using Domain.Aggregates.ReservationAgg;
 using Domain.Aggregates.UserAgg;
 using System;
@@ -13,7 +14,7 @@ namespace Domain.Interfaces
 
         IRepository<User> UserRepo { get; }
         IRepository<Reservation> ReservationRepo { get; }
-        
+        IRepository<FoodType> FoodTypeRepo { get; }
         Task<bool> SaveAsync();
 
     }

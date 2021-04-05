@@ -1,4 +1,5 @@
-﻿using Domain.Aggregates.ReservationAgg;
+﻿using Domain.Aggregates.FoodTypeAgg;
+using Domain.Aggregates.ReservationAgg;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,6 +13,6 @@ namespace ApplicationCore.Services.ReservationService
         public Task<IEnumerable<Reservation>> GetReservationsByUser(int userId);
         public Task<bool> AddReservation(Reservation reservation);
 
-
+        public Task<IEnumerable<FoodType>> GetFoodTypes();
     }
 }

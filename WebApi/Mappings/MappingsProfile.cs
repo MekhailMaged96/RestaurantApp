@@ -16,6 +16,7 @@ namespace WebApi.Mappings
         public MappingsProfile()
         {
             CreateMap<UserDTO, User>();
+            CreateMap<User, UserDTO>();
             CreateMap<User, UserDetailsDTO>();
             CreateMap<FoodTypeDTO,FoodType>().ReverseMap();
             CreateMap<ReservationDTO, Reservation>().ReverseMap();

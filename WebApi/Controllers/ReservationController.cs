@@ -34,7 +34,8 @@ namespace WebApi.Controllers
 
             var rese= await _reservationService.GetReservationsByUser(userId);
 
-            return Ok(rese);
+            var allreser = _mapper.Map<IEnumerable<ReservationDTO>>(rese);
+            return Ok(allreser);
         }
 
 
@@ -49,5 +50,16 @@ namespace WebApi.Controllers
 
             return Ok(rese);
         }
+
+        [HttpGet]
+        [Route("GetFoodTypes")]
+        public async Task<IActionResult> GetFoodTypes()
+        {
+          
+            var rese = await _reservationService.GetFoodTypes();
+
+            return Ok(rese);
+        }
+
     }
 }

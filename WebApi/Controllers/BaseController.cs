@@ -21,6 +21,7 @@ namespace WebApi.Controllers
         private IList<Claim> GetTokenClaims()
         {
             var identity = HttpContext.User.Identity as ClaimsIdentity;
+
             IList<Claim> claims = identity.Claims.ToList();
             return claims;
         }

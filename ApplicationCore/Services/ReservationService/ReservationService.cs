@@ -1,4 +1,5 @@
-﻿using Domain.Aggregates.ReservationAgg;
+﻿using Domain.Aggregates.FoodTypeAgg;
+using Domain.Aggregates.ReservationAgg;
 using Domain.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,13 @@ namespace ApplicationCore.Services.ReservationService
             };
 
             return false;
+        }
+
+        public async Task<IEnumerable<FoodType>> GetFoodTypes()
+        {
+            var foods = await _unitOfWork.FoodTypeRepo.GetAllAsync();
+
+            return foods;
         }
 
         public async Task<IEnumerable<Reservation>> GetReservationsByUser(int userId)
