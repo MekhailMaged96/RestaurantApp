@@ -4,13 +4,13 @@ RestaurantApp is application user can create account and login and add his reser
 
 ## Software
 
-1-  angular 10 
-2- .net core 3.1 
-3-  jwt 
-4-  ngx-translate 
-5-  bootstrap 
-6-  clean architecture and unit of work and Repository pattern
-7-  sql server 
+-  angular 10 
+- .net core 3.1 
+-  jwt 
+-  ngx-translate 
+-  bootstrap 
+-  clean architecture and unit of work and Repository pattern
+-  sql server 
 
 ## run 
 For Angular Project 
